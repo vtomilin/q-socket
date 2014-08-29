@@ -55,7 +55,6 @@ Qs.listen({port: 9999, host: "127.0.0.1"}).progress(function(socket) {
 }).done(function() {
     console.log('Done.');
 });
-
 ```
 
 ##connect(options)
@@ -91,8 +90,7 @@ Qs.connect({host: '127.0.0.1', port: 9999}).then(function(socket) {
         socket.end();
     });
 });
-
- ```
+```
 
 ##portify(socket)
 Makes a `q-connection` compatible port out of given [socket](http://nodejs.org/api/net.html#net_class_net_socket) object and returns it.
