@@ -75,8 +75,8 @@ _UNIX sockets_
 _common options_
 * `allowHalfOpen` boolean argument, detailed in [net.connect](http://nodejs.org/api/net.html#net_net_connect_options_connectionlistener)
 
- ###Example
- This is a client to the simple 'time' server above.
+###Example
+This is a client to the simple 'time' server above.
 
 ```javascript
 var qConnection = require('q-connection'),
