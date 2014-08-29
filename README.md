@@ -78,6 +78,7 @@ _common options_
 
  ###Example
  This is a client to the simple 'time' server above.
+
  ```javascript
 var qConnection = require('q-connection'),
     Qs = require('q-socket');
@@ -90,6 +91,7 @@ Qs.connect({host: '127.0.0.1', port: 9999}).then(function(socket) {
         socket.end();
     });
 });
+
  ```
 
 ##portify(socket)
