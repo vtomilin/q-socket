@@ -16,14 +16,11 @@ _TCP sockets_
 * `args.host` optional host, defaults to localhost
 * `args.backlog` optional depth of accept queue
 
-
 _UNIX sockets_
-* `args.path`
-
+* `args.path` UNIX socket path string
 
 _or_
 * `args.handle` the `handle`object can be set to either a server or socket (anything with an underlying _handle member), or a {fd: <n>} object
-
 
 _common properties_
 * `args.options` optional object, set up as per [net.createServer](http://nodejs.org/api/net.html#net_net_createserver_options_connectionlistener)
@@ -43,7 +40,6 @@ function raddr(socket) {
             util.format('%s:%d', socket.remoteAddress, socket.remotePort))
             || '';
 }
-
 
 Qs.listen({port: 9999, host: "127.0.0.1"}).progress(function(socket) {
     var port = Qs.portify(socket),
@@ -75,11 +71,9 @@ _TCP sockets_
 * `options.localAddress` optional local interface for the connection.
 
 _UNIX sockets_
-
 * `options.path` UNIX socket path string
 
 _common options_
-
 * `allowHalfOpen` boolean argument, detailed in [net.connect](http://nodejs.org/api/net.html#net_net_connect_options_connectionlistener)
 
  ###Example
@@ -98,8 +92,8 @@ Qs.connect({host: '127.0.0.1', port: 9999}).then(function(socket) {
 });
  ```
 
- ##portify(socket)
- Makes a `q-connection` compatible port out of given [socket](http://nodejs.org/api/net.html#net_class_net_socket) object and returns it.
+##portify(socket)
+Makes a `q-connection` compatible port out of given [socket](http://nodejs.org/api/net.html#net_class_net_socket) object and returns it.
 
- ###Example
- See above client and server samples for examples of `portify` use.
+###Example
+See above client and server samples for examples of `portify` use.
