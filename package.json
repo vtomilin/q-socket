@@ -1,0 +1,13 @@
+{
+  "name": "q-socket",
+  "version": "0.0.2",
+  "description": "Adapts Node sockets(net package) to q and q-connection",
+  "keywords": ["q", "q-connection", "socket", "promise", "adapter"],
+  "main": "index.js",
+  "files": ["index.js", "portify.js", "listen.js", "connect.js"],
+  "dependencies": {
+    "q": "*"
+  },
+  "author": "Vitaly Tomilin <varulf@me.com>",
+  "license": "ISC"
+}
