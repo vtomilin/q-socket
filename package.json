@@ -1,7 +1,7 @@
 {
   "name": "q-socket",
   "version": "0.0.2",
-  "description": "Adapts Node sockets(net package) to q and q-connection",
+  "description": "Adapts Node sockets(net package) to work with q and q-connection",
   "keywords": ["q", "q-connection", "socket", "promise", "adapter"],
   "main": "index.js",
   "files": ["index.js", "portify.js", "listen.js", "connect.js"],
@@ -9,5 +9,9 @@
     "q": "*"
   },
   "author": "Vitaly Tomilin <varulf@me.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/vtomilin/q-socket.git"
+  }
 }
