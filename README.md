@@ -78,7 +78,7 @@ _common options_
  ###Example
  This is a client to the simple 'time' server above.
 
- ```javascript
+```javascript
 var qConnection = require('q-connection'),
     Qs = require('q-socket');
 
