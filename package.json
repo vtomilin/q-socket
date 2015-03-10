@@ -1,6 +1,6 @@
 {
   "name": "q-socket",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Adapts Node sockets(net package) to work with q and q-connection",
   "keywords": ["q", "q-connection", "socket", "promise", "adapter"],
   "main": "index.js",

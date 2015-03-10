@@ -3,10 +3,13 @@
 _Q-Socket_ makes using Node sockets under [q](http://documentup.com/kriskowal/q/)
 and [q-connection](https://github.com/kriskowal/q-connection) easier by providing the following functions:
 
-##listen(args)
-Returns a promise object, which will be notified with 'progress' handler
-invoked (with the accepted socket) every time a connection is made to the
-underlying port.
+##listen(args, onconnected)
+Returns a promise object, to be `fulfilled` when underlying server 
+port gets gracefully closed; or `rejected`, if the server port generates
+an error or if unsufficient arguments were given to `listen`.
+
+`onconnected` callback will be invoked with accepted socket object every 
+time a connection is made to the underlying server port.
 
 ###Arguments
 `args` is an object, specifying the following properties:
@@ -25,6 +28,8 @@ _or_
 _common properties_
 * `args.options` optional object, set up as per [net.createServer](http://nodejs.org/api/net.html#net_net_createserver_options_connectionlistener)
 
+* `onconnected` Function object
+
 ###Example
 Below is a simple 'time' server, which also happens to demonstrate a use of
 `portify` function, further described below.
@@ -41,7 +46,7 @@ function raddr(socket) {
             || '';
 }
 
-Qs.listen({port: 9999, host: "127.0.0.1"}).progress(function(socket) {
+Qs.listen({port: 9999, host: "127.0.0.1"}, function(socket) {
     var port = Qs.portify(socket),
         peer = raddr(socket);
 
