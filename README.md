@@ -28,7 +28,7 @@ _or_
 _common properties_
 * `args.options` optional object, set up as per [net.createServer](http://nodejs.org/api/net.html#net_net_createserver_options_connectionlistener)
 
-* `onconnected` Function object
+`onconnected` Function object
 
 ###Example
 Below is a simple 'time' server, which also happens to demonstrate a use of
