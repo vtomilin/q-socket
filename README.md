@@ -1,9 +1,9 @@
-#Q-Socket
+# Q-Socket
 
 _Q-Socket_ makes using Node sockets under [q](http://documentup.com/kriskowal/q/)
 and [q-connection](https://github.com/kriskowal/q-connection) easier by providing the following functions:
 
-##listen(args, onconnected)
+## listen(args, onconnected)
 Returns a promise object, to be `fulfilled` when underlying server 
 port gets gracefully closed; or `rejected`, if the server port generates
 an error or if unsufficient arguments were given to `listen`.
@@ -11,7 +11,7 @@ an error or if unsufficient arguments were given to `listen`.
 `onconnected` callback will be invoked with accepted socket object every 
 time a connection is made to the underlying server port.
 
-###Arguments
+### Arguments
 `args` is an object, specifying the following properties:
 
 _TCP sockets_
@@ -30,7 +30,7 @@ _common properties_
 
 `onconnected` Function object
 
-###Example
+### Example
 Below is a simple 'time' server, which also happens to demonstrate a use of
 `portify` function, further described below.
 
@@ -62,11 +62,11 @@ Qs.listen({port: 9999, host: "127.0.0.1"}, function(socket) {
 });
 ```
 
-##connect(options)
+## connect(options)
 Returns a promise object, which is resolved with a socket on connection or
 rejected with error.
 
-###Arguments
+### Arguments
 `options` object is a single argument to `connect(options)` function, which may specify the following properties:
 
 _TCP sockets_
@@ -80,7 +80,7 @@ _UNIX sockets_
 _common options_
 * `allowHalfOpen` boolean argument, detailed in [net.connect](http://nodejs.org/api/net.html#net_net_connect_options_connectionlistener)
 
-###Example
+### Example
 This is a client to the simple 'time' server above.
 
 ```javascript
@@ -97,8 +97,8 @@ Qs.connect({host: '127.0.0.1', port: 9999}).then(function(socket) {
 });
 ```
 
-##portify(socket)
+## portify(socket)
 Makes a `q-connection` compatible port out of given [socket](http://nodejs.org/api/net.html#net_class_net_socket) object and returns it.
 
-###Example
+### Example
 See above client and server samples for examples of `portify` use.
